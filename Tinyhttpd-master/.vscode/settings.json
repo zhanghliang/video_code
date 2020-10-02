@@ -1,0 +1,11 @@
+{
+    "C_Cpp.errorSquiggles": "Disabled",
+    "files.associations": {
+        "cgic.h": "c",
+        "stdlib.h": "c",
+        "ctype.h": "c",
+        "unistd.h": "c",
+        "mysql.h": "c",
+        "*.tcc": "cpp"
+    }
+}

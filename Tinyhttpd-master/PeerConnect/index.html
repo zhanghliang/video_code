@@ -1,0 +1,36 @@
+<html>
+
+<head>
+    <titile>WebRTC PeerConnection</titile>
+</head>
+
+<body>
+    <div>
+        <div>
+            <h2>Local:</h2>
+            <video id="localvideo" autoplay playsinline></video>
+            <!--autoplay自动播放 playsinline 使用浏览器自己的播放器 源端的视频-->
+            <h2>Offer SDP:</h2>
+            <textarea id="offer"></textarea>
+        </div>
+        <div>
+            <h2>Remote:</h2>
+            <video id="remotevideo" autoplay playsinline></video>
+            <h2>Remote SDP:</h2>
+            <textarea id="answer"></textarea>
+            <!--对端的视频-->
+        </div>
+        <div>
+            <button id="start">Start</button>
+            <!--点击 开始采集音视频数据-->
+            <button id="call">Call</button>
+            <!--创建双方的RTC Connection 协商 双方地址采集 Peer 找到有效链路-->
+            <button id="hangup">HangUp</button>
+            <!--退出-->
+        </div>
+    </div>
+    <script src="https://webrtc.github.io/adapter/adapter-latest.js"></script>
+    <script src="main.js"></script>
+</body>
+
+</html>

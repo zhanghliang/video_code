@@ -1,0 +1,91 @@
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>WebRTC capture audio and video </title>
+    <style>
+        .none {
+            -webkit-filter: none;
+        }
+
+        .blur {
+            -webkit-filter: blur(3px);
+        }
+
+        .grayscale {
+            -webkit-filter: grayscale(1);
+        }
+
+        .inver {
+            -webkit-filter: invert(1);
+        }
+
+        .sepia {
+            -webkit-filter: sepia(1);
+        }
+    </style>
+</head>
+
+<body>
+    <div>
+        <label>audio Source:</label>
+        <select id="audioSource"></select>
+    </div>
+    <div>
+        <label>audio Output:</label>
+        <select id="audioOutput"></select>
+    </div>
+    <div>
+        <label>video Source:</label>
+        <select id="videoSource"></select>
+    </div>
+    <div>
+        <label>Filter:</label>
+        <select id="filter">
+            <option value="none">None</option>
+            <option value="blur">blur</option>
+            <option value="grayscale">grayscale灰度</option>
+            <option value="invert">invert</option>
+            <option value="sepia">speia褐色</option>
+        </select>
+    </div>
+    <table>
+        <tr>
+            <td>
+                <video autoplay playsinline id="player"></video>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <div id="constraints" class="output"></div>
+                <!--获取音视频的约束数据 比如分辨率媒体流-->
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <video playsinline id="recplayer"></video>
+                <!--录制的播放-->
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <button id="record">Start Record</button>
+                <!--开始录制-->
+                <button id="recplay" disabled>Play</button>
+                <!--在上面的video recplayer播放 disabled刚开始处于关闭状态-->
+                <button id="download" disabled>Download</button>
+                <!--下载-->
+            </td>
+        </tr>
+    </table>
+    <div>
+        <button id="snapshot">点击截图</button>
+    </div>
+    <div>
+        <canvas id="picture"></canvas>
+    </div>
+    <script src="https://webrtc.github.io/adapter/adapter-latest.js"></script>
+    <script src="client.js" charset="utf-8" type="text/javascript" language="javascript"></script>
+</body>
+
+</html>
